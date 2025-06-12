@@ -1,0 +1,132 @@
+CRITICAL - 2025-06-04 14:23:15 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "login.php"
+[Method: GET, Route: login]
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(212): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('login.php')
+ 2 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('login', [], true)
+ 3 APPPATH\Modules\Auth\Controllers\Login.php(11): view('login')
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Modules\Auth\Controllers\Login->index()
+ 5 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Modules\Auth\Controllers\Login))
+ 6 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+DEBUG - 2025-06-04 14:24:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-06-04 14:24:14 --> Error: Call to undefined function form_open()
+[Method: GET, Route: login]
+in APPPATH\Modules\Auth\Views\v_login.php on line 94.
+ 1 SYSTEMPATH\View\View.php(224): include()
+ 2 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 3 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('\\App\\Modules\\Auth\\Views\\v_login', [], true)
+ 4 APPPATH\Modules\Auth\Controllers\Login.php(11): view('\\App\\Modules\\Auth\\Views\\v_login')
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Modules\Auth\Controllers\Login->index()
+ 6 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Modules\Auth\Controllers\Login))
+ 7 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+DEBUG - 2025-06-04 14:24:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-04 14:25:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-06-04 14:25:13 --> [DEPRECATED] sha1(): Passing null to parameter #1 ($string) of type string is deprecated in APPPATH\Modules\Auth\Controllers\Login.php on line 22.
+ 1 APPPATH\Modules\Auth\Controllers\Login.php(22): sha1(null)
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Modules\Auth\Controllers\Login->auth()
+ 3 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Modules\Auth\Controllers\Login))
+ 4 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2025-06-04 14:25:13 --> mysqli_sql_exception: Table 'tes_psikologi.users' doesn't exist in C:\laragon\www\uts-psikologi\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\laragon\www\uts-psikologi\system\Database\MySQLi\Connection.php(327): mysqli->query('SELECT *\nFROM `...', 0)
+#1 C:\laragon\www\uts-psikologi\system\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 C:\laragon\www\uts-psikologi\system\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 C:\laragon\www\uts-psikologi\system\Database\BaseBuilder.php(1787): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\laragon\www\uts-psikologi\app\Modules\Auth\Models\AuthModel.php(14): CodeIgniter\Database\BaseBuilder->getWhere(Array)
+#5 C:\laragon\www\uts-psikologi\app\Modules\Auth\Controllers\Login.php(22): App\Modules\Auth\Models\AuthModel->checkData(NULL, 'da39a3ee5e6b4b0...')
+#6 C:\laragon\www\uts-psikologi\system\CodeIgniter.php(933): App\Modules\Auth\Controllers\Login->auth()
+#7 C:\laragon\www\uts-psikologi\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Modules\Auth\Controllers\Login))
+#8 C:\laragon\www\uts-psikologi\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\laragon\www\uts-psikologi\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#10 C:\laragon\www\uts-psikologi\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#11 C:\laragon\www\uts-psikologi\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#12 {main}
+CRITICAL - 2025-06-04 14:25:13 --> CodeIgniter\Database\Exceptions\DatabaseException: Table 'tes_psikologi.users' doesn't exist
+[Method: GET, Route: login/auth]
+in SYSTEMPATH\Database\BaseConnection.php on line 692.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1787): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `users`
+WHERE `email` IS NULL
+AND `password` = :password:', [...], false)
+ 2 APPPATH\Modules\Auth\Models\AuthModel.php(14): CodeIgniter\Database\BaseBuilder->getWhere([...])
+ 3 APPPATH\Modules\Auth\Controllers\Login.php(22): App\Modules\Auth\Models\AuthModel->checkData(null, 'da39a3ee5e6b4b0d3255bfef95601890afd80709')
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Modules\Auth\Controllers\Login->auth()
+ 5 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Modules\Auth\Controllers\Login))
+ 6 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-06-04 14:25:13 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Table 'tes_psikologi.users' doesn't exist
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 332.
+ 1 SYSTEMPATH\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *
+FROM `users`
+WHERE `email` IS NULL
+AND `password` = \'da39a3ee5e6b4b0d3255bfef95601890afd80709\'')
+ 2 SYSTEMPATH\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *
+FROM `users`
+WHERE `email` IS NULL
+AND `password` = \'da39a3ee5e6b4b0d3255bfef95601890afd80709\'')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1787): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `users`
+WHERE `email` IS NULL
+AND `password` = :password:', [...], false)
+ 4 APPPATH\Modules\Auth\Models\AuthModel.php(14): CodeIgniter\Database\BaseBuilder->getWhere([...])
+ 5 APPPATH\Modules\Auth\Controllers\Login.php(22): App\Modules\Auth\Models\AuthModel->checkData(null, 'da39a3ee5e6b4b0d3255bfef95601890afd80709')
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Modules\Auth\Controllers\Login->auth()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Modules\Auth\Controllers\Login))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-06-04 14:25:13 --> [Caused by] mysqli_sql_exception: Table 'tes_psikologi.users' doesn't exist
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 327.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(327): mysqli->query('SELECT *
+FROM `users`
+WHERE `email` IS NULL
+AND `password` = \'da39a3ee5e6b4b0d3255bfef95601890afd80709\'', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *
+FROM `users`
+WHERE `email` IS NULL
+AND `password` = \'da39a3ee5e6b4b0d3255bfef95601890afd80709\'')
+ 3 SYSTEMPATH\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *
+FROM `users`
+WHERE `email` IS NULL
+AND `password` = \'da39a3ee5e6b4b0d3255bfef95601890afd80709\'')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1787): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `users`
+WHERE `email` IS NULL
+AND `password` = :password:', [...], false)
+ 5 APPPATH\Modules\Auth\Models\AuthModel.php(14): CodeIgniter\Database\BaseBuilder->getWhere([...])
+ 6 APPPATH\Modules\Auth\Controllers\Login.php(22): App\Modules\Auth\Models\AuthModel->checkData(null, 'da39a3ee5e6b4b0d3255bfef95601890afd80709')
+ 7 SYSTEMPATH\CodeIgniter.php(933): App\Modules\Auth\Controllers\Login->auth()
+ 8 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Modules\Auth\Controllers\Login))
+ 9 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+DEBUG - 2025-06-04 14:25:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-06-04 14:25:50 --> [DEPRECATED] sha1(): Passing null to parameter #1 ($string) of type string is deprecated in APPPATH\Modules\Auth\Controllers\Login.php on line 22.
+ 1 APPPATH\Modules\Auth\Controllers\Login.php(22): sha1(null)
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Modules\Auth\Controllers\Login->auth()
+ 3 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Modules\Auth\Controllers\Login))
+ 4 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+DEBUG - 2025-06-04 14:25:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-04 14:38:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-04 14:38:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-04 14:38:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-04 14:38:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-04 14:43:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-04 14:43:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-04 14:43:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-04 14:44:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
