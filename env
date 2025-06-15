@@ -1,5 +1,8 @@
 #--------------------------------------------------------------------
 # Example Environment Configuration file
+# CATATAN 
+# 1. ganti nama file ini jadi .env
+# 2. setelah kamu clone project ini, ganti dengan app.baseURL dengan link yang sesuai (misal http://localhost/psikologi/public)
 #
 # This file can be used as a starting point for your own
 # custom .env files, and contains most of the possible settings
@@ -14,13 +17,13 @@
 # ENVIRONMENT
 #--------------------------------------------------------------------
 
-CI_ENVIRONMENT = development // ganti nama file ini jadi .env
+CI_ENVIRONMENT = development 
 
 #--------------------------------------------------------------------
 # APP
 #--------------------------------------------------------------------
 
-app.baseURL = 'http://psikologi.meadow.com' // setelah kamu clone project ini, ganti dengan URL yang sesuai (misal http://localhost/psikologi/public)
+app.baseURL = 'http://psikologi.meadow.com' // 
 app.indexPage = ''
 # If you have trouble with `.`, you could also use `_`.
 # app_baseURL = ''
